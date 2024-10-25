@@ -19,6 +19,7 @@ export function LogIn(){
             </div>
 
             <button type="submit" className="login-boton">Enviar</button>
+            <p className="login-textoRegistro">¿No tienes cuenta? <a href="">Registrate aqui</a></p>
             </form>
             </div>
 
