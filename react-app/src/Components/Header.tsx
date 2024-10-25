@@ -3,17 +3,17 @@ import logo from "./Imgs/logo.png";
 export default function Encabezado() {
   return (
     <div className="header">
-      <div className="leftheader">
+      <div className="header-leftheader">
         <img src={logo} alt="" id="logo" />
-        <p className="name">
+        <p className="header-name">
           <b>LITROGYM</b>
         </p>
       </div>
-      <div className="rightheader">
-        <button className="botonheader">HOME</button>
-        <button className="botonheader">LOGIN</button>
-        <button className="botonheader">CONTACTO</button>
-        <button className="botonheader">QUIENES SOMOS</button>
+      <div className="header-rightheader">
+        <button className="header-botonheader">HOME</button>
+        <button className="header-botonheader">LOGIN</button>
+        <button className="header-botonheader">CONTACTO</button>
+        <button className="header-botonheader">QUIENES SOMOS</button>
       </div>
     </div>
   );

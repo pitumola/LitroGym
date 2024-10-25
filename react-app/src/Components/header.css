@@ -8,7 +8,7 @@
   flex-direction: row;
   justify-content: flex-start;
 }
-.name {
+.header-name {
   font-size: 190%;
   margin-left: 5%;
 }
@@ -20,18 +20,18 @@
   height: 40%;
   width: auto;
 }
-.leftheader {
+.header-leftheader {
   display: flex;
   width: 50%;
   align-items: center;
   justify-content: flex-start;
 }
-.rightheader {
+.header-rightheader {
   display: flex;
   width: 50%;
   justify-content: space-around;
 }
-.botonheader {
+.header-botonheader {
   font-size: 70%;
   border: 0;
   color: rgb(255, 255, 255);
@@ -39,7 +39,7 @@
   height: 100%;
   width: 20%;
 }
-.botonheader:hover {
+.header-botonheader:hover {
   background: rgb(35, 35, 35);
   border-bottom: 2px solid rgb(170, 170, 170);
 }

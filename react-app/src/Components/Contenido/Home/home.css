@@ -1,4 +1,4 @@
-.content {
+.home-content {
   background-image: linear-gradient(
       to bottom,
       rgba(175, 175, 175, 0.5),
@@ -16,7 +16,7 @@
   align-items: center;
   text-align: center;
 }
-.info {
+.home-info {
   display: flex;
   width: 70%;
   height: 70%;
@@ -24,18 +24,18 @@
   flex-direction: column;
   align-items: center;
 }
-.slogan {
+.home-slogan {
   font-size: 250%;
 }
-.textContent {
+.home-textContent {
   font-size: 150%;
 }
-.logo2 {
+.home-logo2 {
   width: 25%;
   height: auto;
 }
 /* SERVICIOS */
-.end {
+.home-end {
   display: flex;
   background: rgb(0, 0, 0);
   width: 100%;
@@ -44,7 +44,7 @@
   flex-wrap: wrap;
   align-content: space-around;
 }
-.endName {
+.home-endName {
   display: flex;
   width: 100%;
   color: rgb(255, 255, 255);
@@ -52,7 +52,7 @@
   align-items: center;
   justify-content: space-around;
 }
-.tipo {
+.home-tipo {
   display: flex;
   width: 27%;
   color: rgb(255, 255, 255);
@@ -60,7 +60,7 @@
   align-items: center;
   justify-content: space-around;
 }
-.services {
+.home-services {
   height: 29vh;
   width: 24%;
 }
