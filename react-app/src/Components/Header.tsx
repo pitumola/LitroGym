@@ -1,6 +1,13 @@
+import React from "react"; // Asegúrate de importar React si no lo has hecho
 import "./header.css";
 import logo from "./Imgs/logo.png";
-export default function Encabezado() {
+
+// Define la interfaz para las props
+interface EncabezadoProps {
+  onIniciarSesion: () => void; // Define el tipo de la función
+}
+
+export default function Encabezado({ onIniciarSesion }: (EncabezadoProps)) { // Usar la interfaz
   return (
     <div className="header">
       <div className="header-leftheader">
@@ -11,7 +18,7 @@ export default function Encabezado() {
       </div>
       <div className="header-rightheader">
         <button className="header-botonheader">HOME</button>
-        <button className="header-botonheader">LOGIN</button>
+        <button className="header-botonheader" onClick={onIniciarSesion}>LOGIN</button> {/* Llamar a la función al hacer clic */}
         <button className="header-botonheader">CONTACTO</button>
         <button className="header-botonheader">QUIENES SOMOS</button>
       </div>
