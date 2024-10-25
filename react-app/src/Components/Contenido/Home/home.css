@@ -1,0 +1,126 @@
+.content {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(175, 175, 175, 0.5),
+      rgb(0, 0, 0)
+    ),
+    url("../../Imgs/fotoFondo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+.info {
+  display: flex;
+  width: 70%;
+  height: 70%;
+  color: rgb(255, 255, 255);
+  flex-direction: column;
+  align-items: center;
+}
+.slogan {
+  font-size: 250%;
+}
+.textContent {
+  font-size: 150%;
+}
+.logo2 {
+  width: 25%;
+  height: auto;
+}
+/* SERVICIOS */
+.end {
+  display: flex;
+  background: rgb(0, 0, 0);
+  width: 100%;
+  height: 50vh;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-content: space-around;
+}
+.endName {
+  display: flex;
+  width: 100%;
+  color: rgb(255, 255, 255);
+  font-size: 190%;
+  align-items: center;
+  justify-content: space-around;
+}
+.tipo {
+  display: flex;
+  width: 27%;
+  color: rgb(255, 255, 255);
+  font-size: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
+.services {
+  height: 29vh;
+  width: 24%;
+}
+#alimentacion {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(190, 190, 190, 0.1),
+      rgb(0, 0, 0)
+    ),
+    url("../../Imgs/alimentacion.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+#alimentacion:hover {
+  background-image: url("../../Imgs/alimentacion.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  transform: scale(1.1);
+}
+#rutina {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(190, 190, 190, 0.1),
+      rgb(0, 0, 0)
+    ),
+    url("../../Imgs/rutina.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+#rutina:hover {
+  background-image: url("../../Imgs/rutina.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  transform: scale(1.1);
+}
+#ejercicios {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(190, 190, 190, 0.1),
+      rgb(0, 0, 0)
+    ),
+    url("../../Imgs/training.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+#ejercicios:hover {
+  background-image: url("../../Imgs/training.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  transform: scale(1.1);
+}
