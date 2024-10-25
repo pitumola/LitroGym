@@ -5,7 +5,7 @@ import React from 'react';
 
 interface HeaderProps {
   onIniciarSesion: () => void;
-  onHomeClick: () => void; // Nueva prop para manejar el clic en HOME
+  onHomeClick: () => void;
 }
 
 const Encabezado: React.FC<HeaderProps> = ({ onIniciarSesion, onHomeClick }) => {

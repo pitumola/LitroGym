@@ -10,9 +10,9 @@ export function App() {
     setMostrarLogIn(true);
   };
 
-  // Nueva función para manejar el clic en HOME
+
   const manejarClickHome = () => {
-    setMostrarLogIn(false); // Restablecer el estado a false
+    setMostrarLogIn(false); 
   };
 
   return (
