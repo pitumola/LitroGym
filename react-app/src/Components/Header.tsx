@@ -1,27 +1,29 @@
-import React from "react"; // Asegúrate de importar React si no lo has hecho
 import "./header.css";
 import logo from "./Imgs/logo.png";
+import '../Components/Contenido/Login/login';
+import React from 'react';
 
-// Define la interfaz para las props
-interface EncabezadoProps {
-  onIniciarSesion: () => void; // Define el tipo de la función
+interface HeaderProps {
+  onIniciarSesion: () => void;
+  onHomeClick: () => void; // Nueva prop para manejar el clic en HOME
 }
 
-export default function Encabezado({ onIniciarSesion }: (EncabezadoProps)) { // Usar la interfaz
+const Encabezado: React.FC<HeaderProps> = ({ onIniciarSesion, onHomeClick }) => {
   return (
     <div className="header">
       <div className="header-leftheader">
-        <img src={logo} alt="" id="logo" />
+        <img src={logo} alt="Logo" id="logo" />
         <p className="header-name">
-          <b>LITROGYM</b>
+            <b>LITROGYM</b>
         </p>
       </div>
       <div className="header-rightheader">
-        <button className="header-botonheader">HOME</button>
-        <button className="header-botonheader" onClick={onIniciarSesion}>LOGIN</button> {/* Llamar a la función al hacer clic */}
-        <button className="header-botonheader">CONTACTO</button>
-        <button className="header-botonheader">QUIENES SOMOS</button>
+        <button className="header-botonheader" onClick={onHomeClick} >HOME</button>
+        <button className="header-botonheader" onClick={onIniciarSesion}>LOGIN</button>
+        <button className="header-botonheader"> CONTACTO</button>
+        <button className="header-botonheader">¿QUIENES SOMOS?</button>
       </div>
     </div>
   );
-}
+};
+export default Encabezado;

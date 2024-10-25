@@ -1,20 +1,27 @@
-import { useState } from "react"; // Asegúrate de importar useState
+import { useState } from "react";
 import Encabezado from "./Components/Header";
 import Home from "./Components/Contenido/Home/home";
 import { LogIn } from "./Components/Contenido/Login/login";
 
 export function App() {
-  const [mostrarLogIn, setMostrarLogIn] = useState(false); // Estado para controlar el inicio de sesión
+  const [mostrarLogIn, setMostrarLogIn] = useState(false);
 
-  // Función que cambia el estado a true para mostrar el componente LogIn
   const manejarClickIniciarSesion = () => {
-    setMostrarLogIn(true); // Cambiar el estado al hacer clic
+    setMostrarLogIn(true);
+  };
+
+  // Nueva función para manejar el clic en HOME
+  const manejarClickHome = () => {
+    setMostrarLogIn(false); // Restablecer el estado a false
   };
 
   return (
     <div id="root">
-      <Encabezado onIniciarSesion={manejarClickIniciarSesion} /> {/* Pasar la función como prop */}
-      {mostrarLogIn ? <LogIn /> : <Home />} {/* Renderizar el componente correspondiente */}
+      <Encabezado 
+        onIniciarSesion={manejarClickIniciarSesion} 
+        onHomeClick={manejarClickHome} // Pasar la nueva función como prop
+      />
+      {mostrarLogIn ? <LogIn /> : <Home />}
     </div>
   );
 }
