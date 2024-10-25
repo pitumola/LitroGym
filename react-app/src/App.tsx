@@ -8,6 +8,9 @@ export function App() {
       <Encabezado />
       <LogIn/>
 
+
+
+
     </div>
   );
 }
