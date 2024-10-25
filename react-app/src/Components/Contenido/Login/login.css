@@ -1,0 +1,17 @@
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 95vh;
+    background-image: url("../../imgs/logo.png");
+    color: white;
+}
+.login-contenedor{
+   background-color: rgb(52, 45, 45); 
+}
+
+
+
+
