@@ -1,6 +1,7 @@
 import './login.css';
 
 export function LogIn(){
+
     return (
         <div className="login">
             <div className="login-contenedor">
@@ -24,4 +25,6 @@ export function LogIn(){
         </div>
 
     )
+
 }
+
