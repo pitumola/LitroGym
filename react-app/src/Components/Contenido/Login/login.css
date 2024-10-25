@@ -9,7 +9,16 @@
     color: white;
 }
 .login-contenedor{
-   background-color: rgb(52, 45, 45); 
+   background-color: rgba(71, 65, 65, 0.478);
+   width: 30%;
+   height: 50%; 
+   border-radius: 20px;
+   
+}
+.login-contenedor h1{
+    text-align: center;
+    margin: 20px;
+    font-size: 30px;
 }
 
 
