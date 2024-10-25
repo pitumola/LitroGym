@@ -1,5 +1,5 @@
 import "./header.css";
-import logo from "./imgs/logo.png";
+import logo from "./Imgs/logo.png";
 export default function Encabezado() {
   return (
     <div className="header">
