@@ -1,0 +1,37 @@
+.footer {
+  display: flex;
+  background: rgb(30, 30, 30);
+  width: 100%;
+  height: 30vh;
+  color: white;
+}
+.fa {
+  color: white;
+  font-size: 300%;
+  height: 100%;
+  width: 100%;
+}
+.footer-logos-btn {
+  background: rgb(30, 30, 30);
+  border: 0;
+}
+.footer-logos {
+  display: flex;
+  align-items: center;
+  width: 30%;
+  height: 100%;
+  justify-content: space-evenly;
+}
+.footer-content {
+  margin-left: 20%;
+  display: flex;
+  width: 80%;
+  height: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+.footer-content-title {
+  font-size: 150%;
+}

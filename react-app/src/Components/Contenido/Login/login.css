@@ -1,3 +1,6 @@
+body {
+  background: #000;
+}
 .login {
   background-image: linear-gradient(
       to bottom,
@@ -17,6 +20,7 @@
   color: white;
   flex-direction: column;
   justify-content: space-evenly;
+  margin-bottom: 9%;
 }
 .login-contenedor {
   display: flex;
@@ -51,7 +55,7 @@
   margin: 0 auto;
   margin-top: 2.5%;
   margin-bottom: 4%;
-  padding: 5px;
+  padding: 1.5%;
   width: 50%;
   border-radius: 2cap;
   background-color: rgb(60, 135, 255);
