@@ -29,6 +29,7 @@
     margin: 20px;
     
 }
+
 .login-boton{
     display: block;
     margin: 0 auto;
@@ -43,6 +44,7 @@
     background-color: rgb(0, 0, 0);
     color: white;
     border: none;
+    cursor: pointer;
 }
 
 
