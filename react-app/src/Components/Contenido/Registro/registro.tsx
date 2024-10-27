@@ -19,7 +19,11 @@ const Registro: React.FC<RegistroProps> = () => {
       return;
     }
 
-    window.location.href = "/home";
+    alert("Te has registrado con éxito.");
+    
+    setTimeout(() => {
+      window.location.href = "/home";
+    }, 300); 
   };
 
   return (
@@ -32,7 +36,14 @@ const Registro: React.FC<RegistroProps> = () => {
               <p>Correo electrónico: </p>
             </label>
             <br />
-            <input type="email" name="correo" id="correo" required value={correo} onChange={(e) => setCorreo(e.target.value)} />
+            <input
+              type="email"
+              name="correo"
+              id="correo"
+              required
+              value={correo}
+              onChange={(e) => setCorreo(e.target.value)}
+            />
           </div>
 
           <div className="registro-grupoinput">
