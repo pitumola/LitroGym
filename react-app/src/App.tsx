@@ -6,9 +6,12 @@ import LogIn from "./Components/Contenido/Login/login";
 import QuienesSomos from "./Components/Contenido/QuienesSomos/quienesSomos";
 import Registro from "./Components/Contenido/Registro/registro";
 import TrabajaConNosotros from "./Components/Contenido/TrabajaConNosotros/trabajaConNosotros";
+import Alimentacion from "./Components/Contenido/Servicios/Alimentacion/Alimentacion";
+import Rutina from "./Components/Contenido/Servicios/Rutina/Rutina";
+import Ejercicios from "./Components/Contenido/Servicios/Ejercicios/Ejercicios";
 
 export function App() {
-  const [pantalla, setPantalla] = useState(5);
+  const [pantalla, setPantalla] = useState(8);
 
   const manejarClickHome = () => {
     setPantalla(1);
@@ -29,6 +32,18 @@ export function App() {
   };
   const manejarClickTrabajaConNosotros = () => {
     setPantalla(5);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+  const manejarClickAlimentacion = () => {
+    setPantalla(6);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+  const manejarClickRutina = () => {
+    setPantalla(7);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+  const manejarClickEjercicios = () => {
+    setPantalla(8);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -53,7 +68,13 @@ export function App() {
   const mostrarContenido = () => {
     switch (pantalla) {
       case 1:
-        return <Home />;
+        return (
+          <Home
+            onAlimentacion={manejarClickAlimentacion}
+            onRutina={manejarClickRutina}
+            onEjercicios={manejarClickEjercicios}
+          />
+        );
       case 2:
         return <LogIn onRegistro={manejarClickRegistro} />;
       case 3:
@@ -62,6 +83,12 @@ export function App() {
         return <Registro />;
       case 5:
         return <TrabajaConNosotros />;
+      case 6:
+        return <Alimentacion />;
+      case 7:
+        return <Rutina />;
+      case 8:
+        return <Ejercicios />;
     }
   };
 

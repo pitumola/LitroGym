@@ -1,7 +1,17 @@
 import "./home.css";
 import logo from "../../Imgs/logo.png";
+import React from "react";
+interface LogInProps {
+  onAlimentacion: () => void;
+  onRutina: () => void;
+  onEjercicios: () => void;
+}
 
-export default function Home() {
+const Home: React.FC<LogInProps> = ({
+  onAlimentacion,
+  onRutina,
+  onEjercicios,
+}) => {
   return (
     <div>
       <div className="home-content">
@@ -28,10 +38,24 @@ export default function Home() {
         <p className="home-tipo">ALIMENTACION PERSONALIZADA:</p>
         <p className="home-tipo">CREA TU RUTINA:</p>
         <p className="home-tipo">EJERCICIOS ESPECÍFICOS:</p>
-        <div className="home-services" id="alimentacion"></div>
-        <div className="home-services" id="rutina"></div>
-        <div className="home-services" id="ejercicios"></div>
+        <button
+          className="home-services"
+          id="alimentacion"
+          onClick={onAlimentacion}
+        ></button>
+        <button
+          className="home-services"
+          id="rutina"
+          onClick={onRutina}
+        ></button>
+        <button
+          className="home-services"
+          id="ejercicios"
+          onClick={onEjercicios}
+        ></button>
       </div>
     </div>
   );
-}
+};
+
+export default Home;
