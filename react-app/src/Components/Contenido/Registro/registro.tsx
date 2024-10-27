@@ -1,21 +1,25 @@
 import "./Registro.css";
 import { useState } from "react";
+import React from "react";
 
-export default function Registro() {
+interface RegistroProps {
+  onHome: () => void;
+}
+
+const Registro: React.FC<RegistroProps> = () => {
   const [correo, setCorreo] = useState("");
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
-
-    const Patronemail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; //Que no empiece por @ que despues del @tenga texto y un . y despues del . tenga texto
+    const Patronemail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!Patronemail.test(correo)) {
       alert("Por favor, introduce un correo electrónico válido.");
       return;
     }
 
-    alert("Formulario enviado correctamente.");
+    window.location.href = "/home";
   };
 
   return (
@@ -28,8 +32,7 @@ export default function Registro() {
               <p>Correo electrónico: </p>
             </label>
             <br />
-            <input type="email" name="correo"id="correo" required value={correo} onChange={(e) => setCorreo(e.target.value)} 
-            />
+            <input type="email" name="correo" id="correo" required value={correo} onChange={(e) => setCorreo(e.target.value)} />
           </div>
 
           <div className="registro-grupoinput">
@@ -55,4 +58,6 @@ export default function Registro() {
       </div>
     </div>
   );
-}
+};
+
+export default Registro;
