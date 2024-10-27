@@ -28,11 +28,10 @@ const Encabezado: React.FC<HeaderProps> = ({
         <button className="header-boton" onClick={onIniciarSesion}>
           LOGIN
         </button>
+        <button className="header-boton">¿QUIENES SOMOS?</button>
         <button className="header-boton" onClick={onContacto}>
-          {" "}
           CONTACTO
         </button>
-        <button className="header-boton">¿QUIENES SOMOS?</button>
       </div>
     </div>
   );
