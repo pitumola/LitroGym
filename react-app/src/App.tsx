@@ -16,12 +16,16 @@ export function App() {
     setMostrarLogIn(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+  const manejarClickContacto = () => {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+  };
 
   return (
     <div id="root">
       <Encabezado
         onIniciarSesion={manejarClickIniciarSesion}
-        onHomeClick={manejarClickHome} // Pasar la nueva función como prop
+        onHomeClick={manejarClickHome}
+        onContacto={manejarClickContacto}
       />
       {mostrarLogIn ? <LogIn /> : <Home />}
       <Footer

@@ -5,11 +5,13 @@ import React from "react";
 interface HeaderProps {
   onIniciarSesion: () => void;
   onHomeClick: () => void;
+  onContacto: () => void;
 }
 
 const Encabezado: React.FC<HeaderProps> = ({
   onIniciarSesion,
   onHomeClick,
+  onContacto,
 }) => {
   return (
     <div className="header">
@@ -26,7 +28,10 @@ const Encabezado: React.FC<HeaderProps> = ({
         <button className="header-boton" onClick={onIniciarSesion}>
           LOGIN
         </button>
-        <button className="header-boton"> CONTACTO</button>
+        <button className="header-boton" onClick={onContacto}>
+          {" "}
+          CONTACTO
+        </button>
         <button className="header-boton">¿QUIENES SOMOS?</button>
       </div>
     </div>
