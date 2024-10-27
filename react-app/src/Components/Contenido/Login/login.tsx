@@ -1,6 +1,6 @@
 import "./login.css";
 
-export function LogIn() {
+export default function LogIn() {
   return (
     <div className="login">
       <b className="login-titulo">INICIAR SESIÓN</b>

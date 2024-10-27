@@ -31,7 +31,7 @@
   width: 50%;
   justify-content: space-around;
 }
-.header-botonheader {
+.header-boton {
   font-size: 70%;
   border: 0;
   color: rgb(255, 255, 255);
@@ -39,7 +39,7 @@
   height: 100%;
   width: 20%;
 }
-.header-botonheader:hover {
+.header-boton:hover {
   background: rgb(35, 35, 35);
   border-bottom: 2px solid rgb(170, 170, 170);
 }

@@ -1,18 +1,20 @@
 import { useState } from "react";
 import Encabezado from "./Components/Header";
-import Home from "./Components/Contenido/Home/home";
-import { LogIn } from "./Components/Contenido/Login/login";
 import Footer from "./Components/footer";
+import Home from "./Components/Contenido/Home/home";
+import LogIn from "./Components/Contenido/Login/login";
 
 export function App() {
   const [mostrarLogIn, setMostrarLogIn] = useState(false);
 
   const manejarClickIniciarSesion = () => {
     setMostrarLogIn(true);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const manejarClickHome = () => {
     setMostrarLogIn(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -22,7 +24,10 @@ export function App() {
         onHomeClick={manejarClickHome} // Pasar la nueva función como prop
       />
       {mostrarLogIn ? <LogIn /> : <Home />}
-      <Footer />
+      <Footer
+        onIniciarSesion={manejarClickIniciarSesion}
+        onHomeClick={manejarClickHome}
+      />
     </div>
   );
 }
