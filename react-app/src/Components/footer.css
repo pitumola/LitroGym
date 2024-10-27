@@ -48,6 +48,7 @@
   justify-content: space-evenly;
 }
 .footer-content-right {
+  margin-left: 5%;
   display: flex;
   width: 50%;
   height: 100%;

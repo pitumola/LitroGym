@@ -1,6 +1,10 @@
 import "./login.css";
+import React from "react";
+interface LogInProps {
+  onRegistro: () => void;
+}
 
-export default function LogIn() {
+const LogIn: React.FC<LogInProps> = ({ onRegistro }) => {
   return (
     <div className="login">
       <b className="login-titulo">INICIAR SESIÓN</b>
@@ -26,10 +30,14 @@ export default function LogIn() {
             Enviar
           </button>
           <p className="login-textoRegistro">
-            ¿No tienes cuenta? <a href="">Registrate aqui</a>
+            ¿No tienes cuenta?{" "}
+            <button className="login-boton-registro" onClick={onRegistro}>
+              Registrate aqui
+            </button>
           </p>
         </form>
       </div>
     </div>
   );
-}
+};
+export default LogIn;

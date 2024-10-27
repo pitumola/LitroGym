@@ -4,11 +4,17 @@ interface FooterProps {
   onIniciarSesion: () => void;
   onHomeClick: () => void;
   onServicios: () => void;
+  onQuienesSomos: () => void;
+  onRegistro: () => void;
+  onTrabajaConNosotros: () => void;
 }
 const Footer: React.FC<FooterProps> = ({
   onIniciarSesion,
   onHomeClick,
   onServicios,
+  onQuienesSomos,
+  onRegistro,
+  onTrabajaConNosotros,
 }) => {
   return (
     <div className="footer">
@@ -60,13 +66,13 @@ const Footer: React.FC<FooterProps> = ({
           <button className="footer-boton" onClick={onIniciarSesion}>
             <p>Iniciar Sesión</p>
           </button>
-          <button className="footer-boton">
+          <button className="footer-boton" onClick={onRegistro}>
             <p>Registro</p>
           </button>
-          <button className="footer-boton">
+          <button className="footer-boton" onClick={onQuienesSomos}>
             <p>¿Quiénes somos?</p>
           </button>
-          <button className="footer-boton">
+          <button className="footer-boton" onClick={onTrabajaConNosotros}>
             <p>Trabaja con nosotros</p>
           </button>
           <button onClick={onServicios} className="footer-boton">

@@ -6,12 +6,14 @@ interface HeaderProps {
   onIniciarSesion: () => void;
   onHomeClick: () => void;
   onContacto: () => void;
+  onQuienesSomos: () => void;
 }
 
 const Encabezado: React.FC<HeaderProps> = ({
   onIniciarSesion,
   onHomeClick,
   onContacto,
+  onQuienesSomos,
 }) => {
   return (
     <div className="header">
@@ -26,9 +28,11 @@ const Encabezado: React.FC<HeaderProps> = ({
           HOME
         </button>
         <button className="header-boton" onClick={onIniciarSesion}>
-          LOGIN
+          INICIAR SESIÓN
         </button>
-        <button className="header-boton">¿QUIENES SOMOS?</button>
+        <button className="header-boton" onClick={onQuienesSomos}>
+          ¿QUIENES SOMOS?
+        </button>
         <button className="header-boton" onClick={onContacto}>
           CONTACTO
         </button>

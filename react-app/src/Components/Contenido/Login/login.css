@@ -79,3 +79,21 @@ body {
 .login-textoRegistro a:hover {
   color: rgb(35, 65, 173);
 }
+.login-boton-registro {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  display: inline;
+  margin: 0;
+  display: inline;
+  text-decoration: underline;
+}
+
+.login-boton-registro:hover {
+  color: rgb(35, 65, 173);
+}
