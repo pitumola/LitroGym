@@ -1,4 +1,4 @@
-.rutina {
+.ejercicios {
   background-image: linear-gradient(
       to bottom,
       rgba(175, 175, 175, 0.5),
@@ -15,7 +15,90 @@
   align-items: center;
   text-align: center;
   color: white;
-  flex-direction: column;
+  flex-direction: row;
+  margin-bottom: 5%;
+  flex-wrap: wrap;
   justify-content: space-evenly;
-  margin-bottom: 9%;
+  align-content: flex-start;
+}
+
+.ejercicios-titulo {
+  margin-top: 8%;
+  margin-bottom: 7%;
+  display: flex;
+  width: 100%;
+  font-size: 250%;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.ejercicios-nombres {
+  display: flex;
+  margin-bottom: 2%;
+  width: 100%;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  font-size: 120%;
+}
+#tren1 {
+  margin-left: 3%;
+}
+#tren2 {
+  margin-right: 3%;
+}
+.ejercicios-tipo {
+  position: relative;
+  width: 35%;
+  height: 45%;
+  overflow: hidden;
+  margin: 0;
+  transition: transform 0.3s ease;
+}
+
+.ejercicios-tipo-btn {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+  margin: 0;
+}
+
+.video-fondo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 105%;
+  height: 105%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ejercicios-tipo-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(190, 190, 190, 0.1),
+    rgb(0, 0, 0)
+  );
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+.ejercicios-tipo:hover {
+  transform: scale(1.05);
+}
+
+.ejercicios-tipo:hover .ejercicios-tipo-btn::after {
+  opacity: 0;
 }

@@ -67,6 +67,23 @@
   border: 0;
   background: #000;
 }
+#alimentacion,
+#rutina,
+#ejercicios {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(190, 190, 190, 0.1),
+      rgb(0, 0, 0)
+    ),
+    url("../../Imgs/alimentacion.jpg"); /* Cambia según el id correspondiente */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 1;
+}
+
 #alimentacion {
   background-image: linear-gradient(
       to right bottom,
@@ -78,15 +95,16 @@
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 1;
 }
+
 #alimentacion:hover {
   background-image: url("../../Imgs/alimentacion.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
   transform: scale(1.1);
+  opacity: 0.8;
 }
+
 #rutina {
   background-image: linear-gradient(
       to right bottom,
@@ -98,15 +116,16 @@
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 1;
 }
+
 #rutina:hover {
   background-image: url("../../Imgs/rutina.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
   transform: scale(1.1);
+  opacity: 0.8;
 }
+
 #ejercicios {
   background-image: linear-gradient(
       to right bottom,
@@ -118,15 +137,16 @@
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 1;
 }
+
 #ejercicios:hover {
   background-image: url("../../Imgs/training.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
   transform: scale(1.1);
+  opacity: 0.8;
 }
+
 .home-boton-servicios {
   background: none;
   border: none;

@@ -3,18 +3,22 @@ import React from "react";
 interface FooterProps {
   onIniciarSesion: () => void;
   onHomeClick: () => void;
-  onServicios: () => void;
+  onEjercicios: () => void;
   onQuienesSomos: () => void;
   onRegistro: () => void;
   onTrabajaConNosotros: () => void;
+  onAlimentacion: () => void;
+  onRutina: () => void;
 }
 const Footer: React.FC<FooterProps> = ({
   onIniciarSesion,
   onHomeClick,
-  onServicios,
+  onEjercicios,
   onQuienesSomos,
   onRegistro,
   onTrabajaConNosotros,
+  onAlimentacion,
+  onRutina,
 }) => {
   return (
     <div className="footer">
@@ -75,8 +79,14 @@ const Footer: React.FC<FooterProps> = ({
           <button className="footer-boton" onClick={onTrabajaConNosotros}>
             <p>Trabaja con nosotros</p>
           </button>
-          <button onClick={onServicios} className="footer-boton">
-            <p>Servicios</p>
+          <button className="footer-boton" onClick={onAlimentacion}>
+            <p>Alimentacion</p>
+          </button>
+          <button className="footer-boton" onClick={onRutina}>
+            <p>Rutina</p>
+          </button>
+          <button className="footer-boton" onClick={onEjercicios}>
+            <p>Ejercicios</p>
           </button>
         </div>
       </div>

@@ -11,7 +11,7 @@ import Rutina from "./Components/Contenido/Servicios/Rutina/Rutina";
 import Ejercicios from "./Components/Contenido/Servicios/Ejercicios/Ejercicios";
 
 export function App() {
-  const [pantalla, setPantalla] = useState(8);
+  const [pantalla, setPantalla] = useState(1);
 
   const manejarClickHome = () => {
     setPantalla(1);
@@ -49,21 +49,6 @@ export function App() {
 
   const manejarClickContacto = () => {
     window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
-  };
-
-  const manejarClickServicios = () => {
-    if (pantalla === 1) {
-      window.scrollTo({
-        top: document.body.scrollHeight / 3, // SE TIENE QUE MODIFICAR SI SE AÑADEN COSAS A HOME !!!
-        behavior: "smooth",
-      });
-    } else {
-      setPantalla(1);
-      window.scrollTo({
-        top: document.body.scrollHeight / 2.5, // SE TIENE QUE MODIFICAR SI SE AÑADEN COSAS A HOME O A LOGIN !!!
-        behavior: "smooth",
-      });
-    }
   };
   const mostrarContenido = () => {
     switch (pantalla) {
@@ -108,7 +93,9 @@ export function App() {
         onRegistro={manejarClickRegistro}
         onQuienesSomos={manejarClickQuienesSomos}
         onTrabajaConNosotros={manejarClickTrabajaConNosotros}
-        onServicios={manejarClickServicios}
+        onAlimentacion={manejarClickAlimentacion}
+        onRutina={manejarClickRutina}
+        onEjercicios={manejarClickEjercicios}
       />
     </div>
   );
