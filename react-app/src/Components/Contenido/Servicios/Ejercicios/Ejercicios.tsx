@@ -1,8 +1,12 @@
 import "./Ejercicios.css";
 import TrenSuperior from "../../../vids/TrenSuperior.mp4";
 import TrenInferior from "../../../vids/TrenInferior.mp4";
-
-export default function Ejercicios() {
+import React from "react";
+interface EjerciciosProps {
+  onSuperior: () => void;
+  onInferior: () => void;
+}
+const Ejercicios: React.FC<EjerciciosProps> = ({ onSuperior, onInferior }) => {
   return (
     <div className="ejercicios">
       <div className="ejercicios-titulo">
@@ -15,7 +19,11 @@ export default function Ejercicios() {
         <p id="tren2">TREN INFERIOR</p>
       </div>
       <div className="ejercicios-tipo">
-        <button className="ejercicios-tipo-btn" id="superior">
+        <button
+          className="ejercicios-tipo-btn"
+          id="superior"
+          onClick={onSuperior}
+        >
           <video className="video-fondo" autoPlay loop muted>
             <source src={TrenSuperior} type="video/mp4" />
             Tu navegador no soporta videos.
@@ -23,7 +31,11 @@ export default function Ejercicios() {
         </button>
       </div>
       <div className="ejercicios-tipo">
-        <button className="ejercicios-tipo-btn" id="inferior">
+        <button
+          className="ejercicios-tipo-btn"
+          id="inferior"
+          onClick={onInferior}
+        >
           <video className="video-fondo" autoPlay loop muted>
             <source src={TrenInferior} type="video/mp4" />
             Tu navegador no soporta videos.
@@ -32,4 +44,6 @@ export default function Ejercicios() {
       </div>
     </div>
   );
-}
+};
+
+export default Ejercicios;
