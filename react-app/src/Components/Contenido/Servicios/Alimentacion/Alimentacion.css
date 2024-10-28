@@ -1,3 +1,6 @@
+body {
+  background: #000;
+}
 .alimentacion {
   background-image: linear-gradient(
       to bottom,
@@ -18,4 +21,45 @@
   flex-direction: column;
   justify-content: space-evenly;
   margin-bottom: 9%;
+}
+.alimentacion-contenedor {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.65);
+  width: 30vw;
+  height: auto;
+  border-radius: 2cap;
+  box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.6);
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 3%;
+}
+
+.alimentacion-titulo {
+  text-align: center;
+  margin-top: 7%;
+  margin-bottom: 5%;
+  font-size: 250%;
+}
+.alimentacion-contenedor-contenido {
+  margin-top: 10%;
+  margin-bottom: 15%;
+}
+.alimentacion-contenedor-contenido a {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 7%;
+  color: white;
+  text-decoration: none;
+}
+.alimentacion-contenedor-contenido a:hover {
+  color: rgb(35, 65, 173);
+}
+#titulo {
+  font-size: 150%;
+  margin-bottom: 20%;
+  text-decoration: underline;
 }

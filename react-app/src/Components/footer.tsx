@@ -40,7 +40,7 @@ const Footer: React.FC<FooterProps> = ({
           <i className="fa fa-github" aria-hidden="true"></i>
         </a>
         <a
-          href="https://open.spotify.com/intl-es/artist/0nmUjrUDhkI9SyK4ZFzu4I?si=dxhoe_GiSmaWF3so3Odhow"
+          href="https://open.spotify.com/playlist/37i9dQZF1DWYp5sAHdz27Y"
           className="footer-logos-btn"
           target="_blank"
           rel="noopener noreferrer"
@@ -80,7 +80,7 @@ const Footer: React.FC<FooterProps> = ({
             <p>Trabaja con nosotros</p>
           </button>
           <button className="footer-boton" onClick={onAlimentacion}>
-            <p>Alimentacion</p>
+            <p>Alimentación</p>
           </button>
           <button className="footer-boton" onClick={onRutina}>
             <p>Rutina</p>
