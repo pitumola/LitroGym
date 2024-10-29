@@ -39,23 +39,25 @@ body {
 
 .alimentacion-titulo {
   text-align: center;
-  margin-top: 7%;
-  margin-bottom: 5%;
+  margin-top: 1%;
   font-size: 250%;
 }
 .alimentacion-contenedor-contenido {
   margin-top: 10%;
   margin-bottom: 15%;
 }
-.alimentacion-contenedor-contenido a {
+.alimentacion-contenedor-contenido button {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin-top: 7%;
   color: white;
+  background: none;
   text-decoration: none;
+  border: none;
+  font-size: 100%;
 }
-.alimentacion-contenedor-contenido a:hover {
+.alimentacion-contenedor-contenido button:hover {
   color: rgb(35, 65, 173);
 }
 #titulo {

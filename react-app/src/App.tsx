@@ -10,6 +10,12 @@ import Rutina from "./Components/Contenido/Servicios/Rutina/Rutina";
 import Ejercicios from "./Components/Contenido/Servicios/Ejercicios/Ejercicios";
 import TrenSuperior from "./Components/Contenido/Servicios/Ejercicios/TrenSuperior";
 import TrenInferior from "./Components/Contenido/Servicios/Ejercicios/TrenInferior";
+import PavoPollo from "./Components/Contenido/Servicios/Alimentacion/Recetas/PavoPollo/PavoPollo";
+import Carnes from "./Components/Contenido/Servicios/Alimentacion/Recetas/Carnes/Carnes";
+import Pescados from "./Components/Contenido/Servicios/Alimentacion/Recetas/Pescados/Pescados";
+import Vegana from "./Components/Contenido/Servicios/Alimentacion/Recetas/Vegana/Vegana";
+import Postres from "./Components/Contenido/Servicios/Alimentacion/Recetas/Postres/Postres";
+import AirFryer from "./Components/Contenido/Servicios/Alimentacion/Recetas/AirFryer/AirFryer";
 
 export function App() {
   const [pantalla, setPantalla] = useState(1);
@@ -51,6 +57,30 @@ export function App() {
     setPantalla(9);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+  const manejarClickPavoPollo = () => {
+    setPantalla(10);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+  const manejarClickCarnes = () => {
+    setPantalla(11);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+  const manejarClickPescados = () => {
+    setPantalla(12);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+  const manejarClickVegana = () => {
+    setPantalla(13);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+  const manejarClickPostres = () => {
+    setPantalla(14);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+  const manejarClickAirFryer = () => {
+    setPantalla(15);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const manejarClickContacto = () => {
     window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
@@ -72,7 +102,16 @@ export function App() {
       case 4:
         return <Registro onHome={manejarClickHome} />;
       case 5:
-        return <Alimentacion />;
+        return (
+          <Alimentacion
+            onPavoPollo={manejarClickPavoPollo}
+            onCarnes={manejarClickCarnes}
+            onPescado={manejarClickPescados}
+            onVegana={manejarClickVegana}
+            onPostres={manejarClickPostres}
+            onAirfryer={manejarClickAirFryer}
+          />
+        );
       case 6:
         return <Rutina />;
       case 7:
@@ -86,6 +125,18 @@ export function App() {
         return <TrenSuperior />;
       case 9:
         return <TrenInferior />;
+      case 10:
+        return <PavoPollo onAlimentacion={manejarClickAlimentacion} />;
+      case 11:
+        return <Carnes onAlimentacion={manejarClickAlimentacion} />;
+      case 12:
+        return <Pescados onAlimentacion={manejarClickAlimentacion} />;
+      case 13:
+        return <Vegana onAlimentacion={manejarClickAlimentacion} />;
+      case 14:
+        return <Postres onAlimentacion={manejarClickAlimentacion} />;
+      case 15:
+        return <AirFryer onAlimentacion={manejarClickAlimentacion} />;
     }
   };
 

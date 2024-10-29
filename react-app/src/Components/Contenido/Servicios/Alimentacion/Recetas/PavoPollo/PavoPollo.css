@@ -1,0 +1,24 @@
+#pollo1 {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(190, 190, 190, 0.1),
+      rgb(0, 0, 0)
+    ),
+    url("../../../../../Imgs/polloPicante.jpg");
+}
+#pollo2 {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(190, 190, 190, 0.1),
+      rgb(0, 0, 0)
+    ),
+    url("../../../../../Imgs/estofadoPollo.jpg");
+}
+#pollo3 {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(190, 190, 190, 0.1),
+      rgb(0, 0, 0)
+    ),
+    url("../../../../../Imgs/pastaPollo.jpg");
+}
