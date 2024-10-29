@@ -1,13 +1,13 @@
 import "./home.css";
 import logo from "../../Imgs/logo.png";
 import React from "react";
-interface LogInProps {
+interface HomeProps {
   onAlimentacion: () => void;
   onRutina: () => void;
   onEjercicios: () => void;
 }
 
-const Home: React.FC<LogInProps> = ({
+const Home: React.FC<HomeProps> = ({
   onAlimentacion,
   onRutina,
   onEjercicios,

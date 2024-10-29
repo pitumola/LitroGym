@@ -3,18 +3,22 @@ import React from "react";
 interface FooterProps {
   onIniciarSesion: () => void;
   onHomeClick: () => void;
-  onServicios: () => void;
+  onEjercicios: () => void;
   onQuienesSomos: () => void;
   onRegistro: () => void;
   onTrabajaConNosotros: () => void;
+  onAlimentacion: () => void;
+  onRutina: () => void;
 }
 const Footer: React.FC<FooterProps> = ({
   onIniciarSesion,
   onHomeClick,
-  onServicios,
+  onEjercicios,
   onQuienesSomos,
   onRegistro,
   onTrabajaConNosotros,
+  onAlimentacion,
+  onRutina,
 }) => {
   return (
     <div className="footer">
@@ -36,7 +40,7 @@ const Footer: React.FC<FooterProps> = ({
           <i className="fa fa-github" aria-hidden="true"></i>
         </a>
         <a
-          href="https://open.spotify.com/intl-es/artist/0nmUjrUDhkI9SyK4ZFzu4I?si=dxhoe_GiSmaWF3so3Odhow"
+          href="https://open.spotify.com/playlist/37i9dQZF1DWYp5sAHdz27Y"
           className="footer-logos-btn"
           target="_blank"
           rel="noopener noreferrer"
@@ -75,8 +79,14 @@ const Footer: React.FC<FooterProps> = ({
           <button className="footer-boton" onClick={onTrabajaConNosotros}>
             <p>Trabaja con nosotros</p>
           </button>
-          <button onClick={onServicios} className="footer-boton">
-            <p>Servicios</p>
+          <button className="footer-boton" onClick={onAlimentacion}>
+            <p>Alimentación</p>
+          </button>
+          <button className="footer-boton" onClick={onRutina}>
+            <p>Rutina</p>
+          </button>
+          <button className="footer-boton" onClick={onEjercicios}>
+            <p>Ejercicios</p>
           </button>
         </div>
       </div>
