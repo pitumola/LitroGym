@@ -30,7 +30,7 @@ const Footer: React.FC<FooterProps> = ({
           <i className="fa">&#xf16d;</i>
         </a>
         <a
-          href="https://github.com/ahmad-azhari"
+          href="https://github.com/pitumola/LitroGym"
           className="footer-logos-btn"
           target="_blank"
           rel="noopener noreferrer"
