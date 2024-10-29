@@ -75,7 +75,7 @@ export function App() {
       case 3:
         return <QuienesSomos />;
       case 4:
-        return <Registro />;
+        return <Registro onHome={manejarClickHome} />;
       case 5:
         return <TrabajaConNosotros />;
       case 6:
