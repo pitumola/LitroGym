@@ -5,7 +5,6 @@ import Home from "./Components/Contenido/Home/home";
 import LogIn from "./Components/Contenido/Login/login";
 import QuienesSomos from "./Components/Contenido/QuienesSomos/quienesSomos";
 import Registro from "./Components/Contenido/Registro/registro";
-import TrabajaConNosotros from "./Components/Contenido/TrabajaConNosotros/trabajaConNosotros";
 import Alimentacion from "./Components/Contenido/Servicios/Alimentacion/Alimentacion";
 import Rutina from "./Components/Contenido/Servicios/Rutina/Rutina";
 import Ejercicios from "./Components/Contenido/Servicios/Ejercicios/Ejercicios";
@@ -32,28 +31,24 @@ export function App() {
     setPantalla(4);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
-  const manejarClickTrabajaConNosotros = () => {
+  const manejarClickAlimentacion = () => {
     setPantalla(5);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
-  const manejarClickAlimentacion = () => {
+  const manejarClickRutina = () => {
     setPantalla(6);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
-  const manejarClickRutina = () => {
+  const manejarClickEjercicios = () => {
     setPantalla(7);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
-  const manejarClickEjercicios = () => {
+  const manejarClickTrenSuperior = () => {
     setPantalla(8);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
-  const manejarClickTrenSuperior = () => {
-    setPantalla(9);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
   const manejarClickTrenInferior = () => {
-    setPantalla(10);
+    setPantalla(9);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -77,21 +72,19 @@ export function App() {
       case 4:
         return <Registro onHome={manejarClickHome} />;
       case 5:
-        return <TrabajaConNosotros />;
-      case 6:
         return <Alimentacion />;
-      case 7:
+      case 6:
         return <Rutina />;
-      case 8:
+      case 7:
         return (
           <Ejercicios
             onSuperior={manejarClickTrenSuperior}
             onInferior={manejarClickTrenInferior}
           />
         );
-      case 9:
+      case 8:
         return <TrenSuperior />;
-      case 10:
+      case 9:
         return <TrenInferior />;
     }
   };
@@ -111,7 +104,6 @@ export function App() {
         onIniciarSesion={manejarClickIniciarSesion}
         onRegistro={manejarClickRegistro}
         onQuienesSomos={manejarClickQuienesSomos}
-        onTrabajaConNosotros={manejarClickTrabajaConNosotros}
         onAlimentacion={manejarClickAlimentacion}
         onRutina={manejarClickRutina}
         onEjercicios={manejarClickEjercicios}
