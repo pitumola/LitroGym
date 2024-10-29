@@ -1,21 +1,72 @@
 import "./login.css";
-import React from "react";
+import React, { useState, useEffect } from "react";
+
 interface LogInProps {
   onRegistro: () => void;
 }
 
 const LogIn: React.FC<LogInProps> = ({ onRegistro }) => {
+  const [correo, setCorreo] = useState("");
+  const [contrasena, setContrasena] = useState("");
+  const [sesionIniciada, setSesionIniciada] = useState(false); 
+
+  useEffect(() => {
+
+
+    const usuarioAutenticado = localStorage.getItem("usuarioAutenticado");
+    if (usuarioAutenticado) {
+      setSesionIniciada(true);
+    }
+  }, []);
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const usuariosGuardados = localStorage.getItem("usuarios");
+    if (usuariosGuardados) {
+      const usuarios = JSON.parse(usuariosGuardados);
+
+      const usuarioEncontrado = usuarios.find(
+        (usuario: { id: string; contrasena: string }) =>
+          usuario.id === correo && usuario.contrasena === contrasena
+      );
+
+      if (usuarioEncontrado) {
+        alert("Inicio de sesión exitoso.");
+        setSesionIniciada(true);
+
+        localStorage.setItem("usuarioAutenticado", "true");
+
+        window.location.href = "/home";
+      } else {
+        alert("Correo electrónico o contraseña incorrectos.");
+      }
+    } else {
+      alert("No hay usuarios registrados.");
+    }
+
+    setCorreo("");
+    setContrasena("");
+  };
+
   return (
     <div className="login">
       <b className="login-titulo">INICIAR SESIÓN</b>
       <div className="login-contenedor">
-        <form action="" className="login-formulario">
+        <form onSubmit={handleSubmit} className="login-formulario">
           <div className="login-grupoinput">
             <label htmlFor="usuario">
-              <p>Nombre de usuario: </p>
+              <p>Correo electrónico: </p>
             </label>
             <br />
-            <input type="text" name="usuario" id="usuario" required />
+            <input
+              type="email"
+              name="usuario"
+              id="usuario"
+              required
+              value={correo}
+              onChange={(e) => setCorreo(e.target.value)}
+            />
           </div>
 
           <div className="login-grupoinput">
@@ -23,7 +74,14 @@ const LogIn: React.FC<LogInProps> = ({ onRegistro }) => {
               <p>Contraseña: </p>
             </label>
             <br />
-            <input type="password" name="contrasena" id="contrasena" required />
+            <input
+              type="password"
+              name="contrasena"
+              id="contrasena"
+              required
+              value={contrasena}
+              onChange={(e) => setContrasena(e.target.value)}
+            />
           </div>
 
           <button type="submit" className="login-boton">
@@ -32,12 +90,14 @@ const LogIn: React.FC<LogInProps> = ({ onRegistro }) => {
           <p className="login-textoRegistro">
             ¿No tienes cuenta?{" "}
             <button className="login-boton-registro" onClick={onRegistro}>
-              Registrate aqui
+              Regístrate aquí
             </button>
           </p>
         </form>
       </div>
+      {sesionIniciada && <p>Sesión iniciada.</p>} {/* Mensaje opcional */}
     </div>
   );
 };
+
 export default LogIn;
