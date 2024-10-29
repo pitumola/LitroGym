@@ -1,5 +1,5 @@
 import "./login.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 interface LogInProps {
   onRegistro: () => void;
@@ -8,6 +8,16 @@ interface LogInProps {
 const LogIn: React.FC<LogInProps> = ({ onRegistro }) => {
   const [correo, setCorreo] = useState("");
   const [contrasena, setContrasena] = useState("");
+  const [sesionIniciada, setSesionIniciada] = useState(false); 
+
+  useEffect(() => {
+
+
+    const usuarioAutenticado = localStorage.getItem("usuarioAutenticado");
+    if (usuarioAutenticado) {
+      setSesionIniciada(true);
+    }
+  }, []);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -23,6 +33,9 @@ const LogIn: React.FC<LogInProps> = ({ onRegistro }) => {
 
       if (usuarioEncontrado) {
         alert("Inicio de sesión exitoso.");
+        setSesionIniciada(true);
+
+        localStorage.setItem("usuarioAutenticado", "true");
 
         window.location.href = "/home";
       } else {
@@ -82,6 +95,7 @@ const LogIn: React.FC<LogInProps> = ({ onRegistro }) => {
           </p>
         </form>
       </div>
+      {sesionIniciada && <p>Sesión iniciada.</p>} {/* Mensaje opcional */}
     </div>
   );
 };

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Registro.css";
+import "../Login/login";
+
 
 interface Usuario {
   id: string;
