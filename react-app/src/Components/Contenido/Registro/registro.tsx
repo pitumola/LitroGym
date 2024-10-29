@@ -1,51 +1,68 @@
+import React, { useState, useEffect } from "react";
 import "./Registro.css";
-import { useState } from "react";
-import React from "react";
-import emailjs from 'emailjs-com';
 
-interface RegistroProps {
-  onHome: () => void;
+interface Usuario {
+  id: string;
+  nombre: string;
+  contrasena: string;
 }
 
-const Registro: React.FC<RegistroProps> = () => {
+const Registro: React.FC = () => {
   const [correo, setCorreo] = useState("");
+  const [nombre, setNombre] = useState("");
+  const [contrasena, setContrasena] = useState("");
+  const [usuarios, setUsuarios] = useState<Usuario[]>([]);
 
-  const enviarCorreo = (correo: string) => {
-    emailjs.send(
-      "service_rtaubll", 
-      "template_dnvtarf", {
-      to_name: "Eduardo",      // Nombre del destinatario
-      correo: correo,          // Correo electrónico del destinatario
-    },
-    '9hzDoDea_-amcBCeu')
-    .then((response) => {
-      console.log("Correo enviado con éxito!", response.status, response.text);
-    })
-    .catch((err) => {
-      console.error("Error al enviar el correo:", err);
-      alert("Ocurrió un error al enviar el correo. Intenta nuevamente.");
-    });
-    
-  };
+  // Cargar usuarios desde localStorage al iniciar el componente
+  useEffect(() => {
+    const usuariosGuardados = localStorage.getItem("usuarios");
+    if (usuariosGuardados) {
+      setUsuarios(JSON.parse(usuariosGuardados));
+    }
+  }, []);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
+    // Verificar si el correo electrónico es válido
     const Patronemail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
     if (!Patronemail.test(correo)) {
       alert("Por favor, introduce un correo electrónico válido.");
       return;
     }
 
-    // Llama a enviarCorreo aquí
-    enviarCorreo(correo);
+    // Verificar si el usuario ya está registrado
+    const usuarioExistente = usuarios.find((usuario) => usuario.id === correo);
+    if (usuarioExistente) {
+      alert("Este correo electrónico ya está registrado.");
+      return;
+    }
+
+    // Crear un nuevo usuario
+    const NuevoUsuario: Usuario = {
+      id: correo,
+      nombre: nombre,
+      contrasena: contrasena,
+    };
+
+    // Actualizar el estado con el nuevo usuario
+    const nuevosUsuarios = [...usuarios, NuevoUsuario];
+    setUsuarios(nuevosUsuarios);
+
+    // Guardar los usuarios en localStorage
+    localStorage.setItem("usuarios", JSON.stringify(nuevosUsuarios));
 
     alert("Te has registrado con éxito.");
 
+    // Limpiar los campos
+    setCorreo("");
+    setNombre("");
+    setContrasena("");
+
+    // Redirigir a la página de inicio después de un tiempo
     setTimeout(() => {
       window.location.href = "/home";
-    }, 300); 
+    }, 300);
   };
 
   return (
@@ -69,11 +86,18 @@ const Registro: React.FC<RegistroProps> = () => {
           </div>
 
           <div className="registro-grupoinput">
-            <label htmlFor="usuario">
-              <p>Nombre de usuario: </p>
+            <label htmlFor="nombre">
+              <p>Nombre: </p>
             </label>
             <br />
-            <input type="text" name="usuario" id="usuario" required />
+            <input
+              type="text"
+              name="nombre"
+              id="nombre"
+              value={nombre}
+              onChange={(e) => setNombre(e.target.value)}
+              required
+            />
           </div>
 
           <div className="registro-grupoinput">
@@ -81,20 +105,20 @@ const Registro: React.FC<RegistroProps> = () => {
               <p>Contraseña: </p>
             </label>
             <br />
-            <input type="password" name="contrasena" id="contrasena" required />
+            <input
+              type="password"
+              name="contrasena"
+              id="contrasena"
+              value={contrasena}
+              onChange={(e) => setContrasena(e.target.value)}
+              required
+            />
           </div>
 
           <button type="submit" className="registro-boton">
             Enviar
           </button>
         </form>
-
-        <script type="text/javascript"
-  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-<script type="text/javascript">
-  emailjs.init('9hzDoDea_-amcBCeu')
-</script>
       </div>
     </div>
   );
