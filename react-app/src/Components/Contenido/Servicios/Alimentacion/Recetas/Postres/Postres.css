@@ -1,0 +1,24 @@
+#postres1 {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(190, 190, 190, 0.1),
+      rgb(0, 0, 0)
+    ),
+    url("../../../../../Imgs/tortitas.jpg");
+}
+#postres2 {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(190, 190, 190, 0.1),
+      rgb(0, 0, 0)
+    ),
+    url("../../../../../Imgs/brownie.jpg");
+}
+#postres3 {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(190, 190, 190, 0.1),
+      rgb(0, 0, 0)
+    ),
+    url("../../../../../Imgs/gofres.jpg");
+}

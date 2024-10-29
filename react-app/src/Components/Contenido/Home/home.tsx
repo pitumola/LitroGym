@@ -1,6 +1,7 @@
 import "./home.css";
 import logo from "../../Imgs/logo.png";
 import React from "react";
+
 interface HomeProps {
   onAlimentacion: () => void;
   onRutina: () => void;

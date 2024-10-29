@@ -1,0 +1,24 @@
+#vegana1 {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(190, 190, 190, 0.1),
+      rgb(0, 0, 0)
+    ),
+    url("../../../../../Imgs/hamburguesaVegana.jpg");
+}
+#vegana2 {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(190, 190, 190, 0.1),
+      rgb(0, 0, 0)
+    ),
+    url("../../../../../Imgs/lasañaVegana.jpg");
+}
+#vegana3 {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(190, 190, 190, 0.1),
+      rgb(0, 0, 0)
+    ),
+    url("../../../../../Imgs/tacosColiflor.jpg");
+}
