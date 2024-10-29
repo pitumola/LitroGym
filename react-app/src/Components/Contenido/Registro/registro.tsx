@@ -88,6 +88,13 @@ const Registro: React.FC<RegistroProps> = () => {
             Enviar
           </button>
         </form>
+
+        <script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script type="text/javascript">
+  emailjs.init('9hzDoDea_-amcBCeu')
+</script>
       </div>
     </div>
   );
