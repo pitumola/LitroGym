@@ -1,6 +1,7 @@
 import "./Registro.css";
 import { useState } from "react";
 import React from "react";
+import emailjs from 'emailjs-com';
 
 interface RegistroProps {
   onHome: () => void;
@@ -9,7 +10,25 @@ interface RegistroProps {
 const Registro: React.FC<RegistroProps> = () => {
   const [correo, setCorreo] = useState("");
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const enviarCorreo = (correo: string) => {
+    emailjs.send(
+      "service_rtaubll", 
+      "template_dnvtarf", {
+      to_name: "Eduardo",      // Nombre del destinatario
+      correo: correo,          // Correo electrónico del destinatario
+    },
+    '9hzDoDea_-amcBCeu')
+    .then((response) => {
+      console.log("Correo enviado con éxito!", response.status, response.text);
+    })
+    .catch((err) => {
+      console.error("Error al enviar el correo:", err);
+      alert("Ocurrió un error al enviar el correo. Intenta nuevamente.");
+    });
+    
+  };
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const Patronemail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -19,8 +38,11 @@ const Registro: React.FC<RegistroProps> = () => {
       return;
     }
 
+    // Llama a enviarCorreo aquí
+    enviarCorreo(correo);
+
     alert("Te has registrado con éxito.");
-    
+
     setTimeout(() => {
       window.location.href = "/home";
     }, 300); 
