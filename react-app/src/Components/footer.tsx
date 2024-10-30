@@ -6,7 +6,6 @@ interface FooterProps {
   onEjercicios: () => void;
   onQuienesSomos: () => void;
   onRegistro: () => void;
-  onTrabajaConNosotros: () => void;
   onAlimentacion: () => void;
   onRutina: () => void;
 }
@@ -16,7 +15,6 @@ const Footer: React.FC<FooterProps> = ({
   onEjercicios,
   onQuienesSomos,
   onRegistro,
-  onTrabajaConNosotros,
   onAlimentacion,
   onRutina,
 }) => {
@@ -32,7 +30,7 @@ const Footer: React.FC<FooterProps> = ({
           <i className="fa">&#xf16d;</i>
         </a>
         <a
-          href="https://github.com/ahmad-azhari"
+          href="https://github.com/pitumola/LitroGym"
           className="footer-logos-btn"
           target="_blank"
           rel="noopener noreferrer"
@@ -58,9 +56,9 @@ const Footer: React.FC<FooterProps> = ({
           <b>
             <p className="footer-content-title">Datos de contacto</p>
           </b>
-          <p>ahmad18k@movilesenfiestas.com</p>
+          <p>litrocontacto@gmail.com</p>
           <b>
-            <p>+34 642 17 55 13</p>
+            <p>+34 91 234 56 78</p>
           </b>
         </div>
         <div className="footer-content-right">
@@ -75,9 +73,6 @@ const Footer: React.FC<FooterProps> = ({
           </button>
           <button className="footer-boton" onClick={onQuienesSomos}>
             <p>¿Quiénes somos?</p>
-          </button>
-          <button className="footer-boton" onClick={onTrabajaConNosotros}>
-            <p>Trabaja con nosotros</p>
           </button>
           <button className="footer-boton" onClick={onAlimentacion}>
             <p>Alimentación</p>

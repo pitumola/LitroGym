@@ -1,0 +1,24 @@
+#carnes1 {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(190, 190, 190, 0.1),
+      rgb(0, 0, 0)
+    ),
+    url("../../../../../Imgs/SandichTernera.jpg");
+}
+#carnes2 {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(190, 190, 190, 0.1),
+      rgb(0, 0, 0)
+    ),
+    url("../../../../../Imgs/fajitasHalloumi.jpg");
+}
+#carnes3 {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(190, 190, 190, 0.1),
+      rgb(0, 0, 0)
+    ),
+    url("../../../../../Imgs/ramenTernera.jpg");
+}

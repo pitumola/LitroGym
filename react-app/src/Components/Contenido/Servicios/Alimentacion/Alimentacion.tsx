@@ -1,32 +1,39 @@
 import "./Alimentacion.css";
+import React from "react";
 
-export default function Alimentacion() {
+interface AlimentacionProps {
+  onPavoPollo: () => void;
+  onCarnes: () => void;
+  onPescado: () => void;
+  onVegana: () => void;
+  onPostres: () => void;
+  onAirfryer: () => void;
+}
+const Alimentacion: React.FC<AlimentacionProps> = ({
+  onPavoPollo,
+  onCarnes,
+  onPescado,
+  onVegana,
+  onPostres,
+  onAirfryer,
+}) => {
   return (
     <div className="alimentacion">
       <b className="alimentacion-titulo">ALIMENTACION</b>
       <div className="alimentacion-contenedor">
         <div className="alimentacion-contenedor-contenido">
           <p id="titulo">Recetas:</p>
-          <a href="https://www.myprotein.es/thezone/recetas/ganar-masa-muscular-eliminar-grasa/#pechuga">
+          <button onClick={onPavoPollo}>
             · Recetas con pechuga de pollo o pavo
-          </a>
-          <a href="https://www.myprotein.es/thezone/recetas/ganar-masa-muscular-eliminar-grasa/#carnes">
-            · Recetas con otras carnes o queso
-          </a>
-          <a href="https://www.myprotein.es/thezone/recetas/ganar-masa-muscular-eliminar-grasa/#pescado">
-            · Recetas con pescado
-          </a>
-          <a href="https://www.myprotein.es/thezone/recetas/ganar-masa-muscular-eliminar-grasa/#veganas">
-            · Recetas veganas
-          </a>
-          <a href="https://www.myprotein.es/thezone/recetas/ganar-masa-muscular-eliminar-grasa/#postres">
-            · Recetas de postres proteicos
-          </a>
-          <a href="https://www.myprotein.es/thezone/recetas/ganar-masa-muscular-eliminar-grasa/#airfryer">
-            · Recetas en airfryer
-          </a>
+          </button>
+          <button onClick={onCarnes}>· Recetas con otras carnes o queso</button>
+          <button onClick={onPescado}>· Recetas con pescado</button>
+          <button onClick={onVegana}>· Recetas veganas</button>
+          <button onClick={onPostres}>· Recetas de postres proteicos</button>
+          <button onClick={onAirfryer}>· Recetas en airfryer</button>
         </div>
       </div>
     </div>
   );
-}
+};
+export default Alimentacion;
