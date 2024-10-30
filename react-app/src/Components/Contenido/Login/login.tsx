@@ -1,5 +1,6 @@
 import "./login.css";
 import React, { useState, useEffect } from "react";
+import sesion from './sesion'; 
 
 interface LogInProps {
   onRegistro: () => void;
@@ -8,14 +9,17 @@ interface LogInProps {
 const LogIn: React.FC<LogInProps> = ({ onRegistro }) => {
   const [correo, setCorreo] = useState("");
   const [contrasena, setContrasena] = useState("");
-  const [sesionIniciada, setSesionIniciada] = useState(false); 
 
   useEffect(() => {
+  
+    sesion.cerrarSesion();
+    console.log("Sesión cerrada por defecto al iniciar.");
 
 
-    const usuarioAutenticado = localStorage.getItem("usuarioAutenticado");
-    if (usuarioAutenticado) {
-      setSesionIniciada(true);
+    if (sesion.estaSesionActiva()) {
+      console.log("Sesión ya iniciada previamente.");
+
+      window.location.href = "/home"; 
     }
   }, []);
 
@@ -32,18 +36,18 @@ const LogIn: React.FC<LogInProps> = ({ onRegistro }) => {
       );
 
       if (usuarioEncontrado) {
+        sesion.iniciarSesion(); 
         alert("Inicio de sesión exitoso.");
-        setSesionIniciada(true);
-
-        localStorage.setItem("usuarioAutenticado", "true");
 
         window.location.href = "/home";
       } else {
         alert("Correo electrónico o contraseña incorrectos.");
+        sesion.cerrarSesion(); 
       }
     } else {
       alert("No hay usuarios registrados.");
     }
+
 
     setCorreo("");
     setContrasena("");
@@ -89,13 +93,12 @@ const LogIn: React.FC<LogInProps> = ({ onRegistro }) => {
           </button>
           <p className="login-textoRegistro">
             ¿No tienes cuenta?{" "}
-            <button className="login-boton-registro" onClick={onRegistro}>
+            <button type="button" className="login-boton-registro" onClick={onRegistro}>
               Regístrate aquí
             </button>
           </p>
         </form>
       </div>
-      {sesionIniciada && <p>Sesión iniciada.</p>} {/* Mensaje opcional */}
     </div>
   );
 };

@@ -11,6 +11,7 @@ import Rutina from "./Components/Contenido/Servicios/Rutina/Rutina";
 import Ejercicios from "./Components/Contenido/Servicios/Ejercicios/Ejercicios";
 import TrenSuperior from "./Components/Contenido/Servicios/Ejercicios/TrenSuperior";
 import TrenInferior from "./Components/Contenido/Servicios/Ejercicios/TrenInferior";
+import sesion from "./Components/Contenido/Login/sesion";
 
 export function App() {
   const [pantalla, setPantalla] = useState(1);
@@ -71,6 +72,9 @@ export function App() {
           />
         );
       case 2:
+        if (!sesion.estaSesionActiva) {
+         return  null;
+        }
         return <LogIn onRegistro={manejarClickRegistro} />;
       case 3:
         return <QuienesSomos />;
@@ -79,10 +83,22 @@ export function App() {
       case 5:
         return <TrabajaConNosotros />;
       case 6:
+        if (!sesion.sesionIniciada) {
+          setPantalla(2);
+          return null;
+        }
         return <Alimentacion />;
       case 7:
+        if (!sesion.sesionIniciada) {
+          setPantalla(2);
+          return null;
+        }
         return <Rutina />;
       case 8:
+        if (!sesion.sesionIniciada) {
+          setPantalla(2);
+          return null;
+        }
         return (
           <Ejercicios
             onSuperior={manejarClickTrenSuperior}
