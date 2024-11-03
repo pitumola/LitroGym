@@ -19,7 +19,6 @@ import Postres from "./Components/Contenido/Servicios/Alimentacion/Recetas/Postr
 import AirFryer from "./Components/Contenido/Servicios/Alimentacion/Recetas/AirFryer/AirFryer";
 import sesion from "./Components/Contenido/Login/sesion";
 
-
 export function App() {
   const [pantalla, setPantalla] = useState(1);
 
@@ -100,7 +99,7 @@ export function App() {
         );
       case 2:
         if (!sesion.estaSesionActiva) {
-         return  null;
+          return null;
         }
         return <LogIn onRegistro={manejarClickRegistro} />;
       case 3:
