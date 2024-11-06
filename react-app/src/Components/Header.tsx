@@ -4,14 +4,14 @@ import React from "react";
 
 interface HeaderProps {
   onIniciarSesion: () => void;
-  onHomeClick: () => void;
+  onHome: () => void;
   onContacto: () => void;
   onQuienesSomos: () => void;
 }
 
 const Encabezado: React.FC<HeaderProps> = ({
   onIniciarSesion,
-  onHomeClick,
+  onHome,
   onContacto,
   onQuienesSomos,
 }) => {
@@ -24,7 +24,7 @@ const Encabezado: React.FC<HeaderProps> = ({
         </p>
       </div>
       <div className="header-rightheader">
-        <button className="header-boton" onClick={onHomeClick}>
+        <button className="header-boton" onClick={onHome}>
           HOME
         </button>
         <button className="header-boton" onClick={onIniciarSesion}>

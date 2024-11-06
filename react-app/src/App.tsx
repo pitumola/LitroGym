@@ -106,7 +106,7 @@ export function App() {
       case 3:
         return <QuienesSomos />;
       case 4:
-        return <Registro onHome={manejarClickHome} />;
+        return <Registro />;
       case 5:
         return (
           <Alimentacion
@@ -118,19 +118,14 @@ export function App() {
             onAirfryer={manejarClickAirFryer}
           />
         );
+        return <Rutina />;
       case 6:
         if (!sesion.sesionIniciada) {
           setPantalla(2);
           return null;
         }
-        return <Alimentacion />;
-      case 7:
-        if (!sesion.sesionIniciada) {
-          setPantalla(2);
-          return null;
-        }
         return <Rutina />;
-      case 8:
+      case 7:
         if (!sesion.sesionIniciada) {
           setPantalla(2);
           return null;
@@ -164,14 +159,14 @@ export function App() {
     <div id="root">
       <Encabezado
         onIniciarSesion={manejarClickIniciarSesion}
-        onHomeClick={manejarClickHome}
+        onHome={manejarClickHome}
         onQuienesSomos={manejarClickQuienesSomos}
         onContacto={manejarClickContacto}
       />
       {mostrarContenido()}
 
       <Footer
-        onHomeClick={manejarClickHome}
+        onHome={manejarClickHome}
         onIniciarSesion={manejarClickIniciarSesion}
         onRegistro={manejarClickRegistro}
         onQuienesSomos={manejarClickQuienesSomos}

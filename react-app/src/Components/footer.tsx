@@ -2,7 +2,7 @@ import "./footer.css";
 import React from "react";
 interface FooterProps {
   onIniciarSesion: () => void;
-  onHomeClick: () => void;
+  onHome: () => void;
   onEjercicios: () => void;
   onQuienesSomos: () => void;
   onRegistro: () => void;
@@ -11,7 +11,7 @@ interface FooterProps {
 }
 const Footer: React.FC<FooterProps> = ({
   onIniciarSesion,
-  onHomeClick,
+  onHome,
   onEjercicios,
   onQuienesSomos,
   onRegistro,
@@ -62,7 +62,7 @@ const Footer: React.FC<FooterProps> = ({
           </b>
         </div>
         <div className="footer-content-right">
-          <button className="footer-boton" onClick={onHomeClick}>
+          <button className="footer-boton" onClick={onHome}>
             <p>Home</p>
           </button>
           <button className="footer-boton" onClick={onIniciarSesion}>
