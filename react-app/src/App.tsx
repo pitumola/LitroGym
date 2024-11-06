@@ -1,24 +1,24 @@
 import { useState } from "react";
-import Encabezado from "./Components/Header";
-import Footer from "./Components/footer";
-import Home from "./Components/Contenido/Home/home";
-import LogIn from "./Components/Contenido/Login/login";
-import QuienesSomos from "./Components/Contenido/QuienesSomos/quienesSomos";
-import Registro from "./Components/Contenido/Registro/registro";
-import Alimentacion from "./Components/Contenido/Servicios/Alimentacion/Alimentacion";
-import Rutina from "./Components/Contenido/Servicios/Rutina/Rutina";
-import Ejercicios from "./Components/Contenido/Servicios/Ejercicios/Ejercicios";
-import TrenSuperior from "./Components/Contenido/Servicios/Ejercicios/TrenSuperior";
-import TrenInferior from "./Components/Contenido/Servicios/Ejercicios/TrenInferior";
-
-import PavoPollo from "./Components/Contenido/Servicios/Alimentacion/Recetas/PavoPollo/PavoPollo";
-import Carnes from "./Components/Contenido/Servicios/Alimentacion/Recetas/Carnes/Carnes";
-import Pescados from "./Components/Contenido/Servicios/Alimentacion/Recetas/Pescados/Pescados";
-import Vegana from "./Components/Contenido/Servicios/Alimentacion/Recetas/Vegana/Vegana";
-import Postres from "./Components/Contenido/Servicios/Alimentacion/Recetas/Postres/Postres";
-import AirFryer from "./Components/Contenido/Servicios/Alimentacion/Recetas/AirFryer/AirFryer";
-import sesion from "./Components/Contenido/Login/sesion";
-
+import {
+  Encabezado,
+  Footer,
+  Home,
+  LogIn,
+  QuienesSomos,
+  Registro,
+  Alimentacion,
+  Rutina,
+  Ejercicios,
+  TrenSuperior,
+  TrenInferior,
+  PavoPollo,
+  Carnes,
+  Pescados,
+  Vegana,
+  Postres,
+  AirFryer,
+  sesion,
+} from "./Components";
 
 export function App() {
   const [pantalla, setPantalla] = useState(1);
@@ -100,7 +100,7 @@ export function App() {
         );
       case 2:
         if (!sesion.estaSesionActiva) {
-         return  null;
+          return null;
         }
         return <LogIn onRegistro={manejarClickRegistro} />;
       case 3:
