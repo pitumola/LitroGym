@@ -108,6 +108,10 @@ export function App() {
       case 4:
         return <Registro />;
       case 5:
+        if (!sesion.sesionIniciada) {
+          setPantalla(2);
+          return null;
+        }
         return (
           <Alimentacion
             onPavoPollo={manejarClickPavoPollo}
