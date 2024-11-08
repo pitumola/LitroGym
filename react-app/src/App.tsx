@@ -1,23 +1,25 @@
 import { useState } from "react";
-import Encabezado from "./Components/Header";
-import Footer from "./Components/footer";
-import Home from "./Components/Contenido/Home/home";
-import LogIn from "./Components/Contenido/Login/login";
-import QuienesSomos from "./Components/Contenido/QuienesSomos/quienesSomos";
-import Registro from "./Components/Contenido/Registro/registro";
-import Alimentacion from "./Components/Contenido/Servicios/Alimentacion/Alimentacion";
-import Rutina from "./Components/Contenido/Servicios/Rutina/Rutina";
-import Ejercicios from "./Components/Contenido/Servicios/Ejercicios/Ejercicios";
-import TrenSuperior from "./Components/Contenido/Servicios/Ejercicios/TrenSuperior";
-import TrenInferior from "./Components/Contenido/Servicios/Ejercicios/TrenInferior";
-
-import PavoPollo from "./Components/Contenido/Servicios/Alimentacion/Recetas/PavoPollo/PavoPollo";
-import Carnes from "./Components/Contenido/Servicios/Alimentacion/Recetas/Carnes/Carnes";
-import Pescados from "./Components/Contenido/Servicios/Alimentacion/Recetas/Pescados/Pescados";
-import Vegana from "./Components/Contenido/Servicios/Alimentacion/Recetas/Vegana/Vegana";
-import Postres from "./Components/Contenido/Servicios/Alimentacion/Recetas/Postres/Postres";
-import AirFryer from "./Components/Contenido/Servicios/Alimentacion/Recetas/AirFryer/AirFryer";
-import sesion from "./Components/Contenido/Login/sesion";
+import {
+  Encabezado,
+  Footer,
+  Home,
+  LogIn,
+  QuienesSomos,
+  Registro,
+  Alimentacion,
+  Rutina,
+  Ejercicios,
+  TrenSuperior,
+  TrenInferior,
+  PavoPollo,
+  Carnes,
+  Pescados,
+  Vegana,
+  Postres,
+  AirFryer,
+  sesion,
+  BuscadorEjercicios,
+} from "./Components";
 
 export function App() {
   const [pantalla, setPantalla] = useState(1);
@@ -83,6 +85,10 @@ export function App() {
     setPantalla(15);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+  const manejarClickBuscadorEjercicios = () => {
+    setPantalla(16);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const manejarClickContacto = () => {
     window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
@@ -105,8 +111,12 @@ export function App() {
       case 3:
         return <QuienesSomos />;
       case 4:
-        return <Registro onHome={manejarClickHome} />;
+        return <Registro />;
       case 5:
+        if (!sesion.sesionIniciada) {
+          setPantalla(2);
+          return null;
+        }
         return (
           <Alimentacion
             onPavoPollo={manejarClickPavoPollo}
@@ -117,19 +127,14 @@ export function App() {
             onAirfryer={manejarClickAirFryer}
           />
         );
+        return <Rutina />;
       case 6:
         if (!sesion.sesionIniciada) {
           setPantalla(2);
           return null;
         }
-        return <Alimentacion />;
-      case 7:
-        if (!sesion.sesionIniciada) {
-          setPantalla(2);
-          return null;
-        }
         return <Rutina />;
-      case 8:
+      case 7:
         if (!sesion.sesionIniciada) {
           setPantalla(2);
           return null;
@@ -156,6 +161,8 @@ export function App() {
         return <Postres onAlimentacion={manejarClickAlimentacion} />;
       case 15:
         return <AirFryer onAlimentacion={manejarClickAlimentacion} />;
+      case 16:
+        return <BuscadorEjercicios />;
     }
   };
 
@@ -163,20 +170,22 @@ export function App() {
     <div id="root">
       <Encabezado
         onIniciarSesion={manejarClickIniciarSesion}
-        onHomeClick={manejarClickHome}
+        onHome={manejarClickHome}
         onQuienesSomos={manejarClickQuienesSomos}
         onContacto={manejarClickContacto}
+        onBuscadorEjercicios={manejarClickBuscadorEjercicios}
       />
       {mostrarContenido()}
 
       <Footer
-        onHomeClick={manejarClickHome}
+        onHome={manejarClickHome}
         onIniciarSesion={manejarClickIniciarSesion}
         onRegistro={manejarClickRegistro}
         onQuienesSomos={manejarClickQuienesSomos}
         onAlimentacion={manejarClickAlimentacion}
         onRutina={manejarClickRutina}
         onEjercicios={manejarClickEjercicios}
+        onBuscadorEjercicios={manejarClickBuscadorEjercicios}
       />
     </div>
   );

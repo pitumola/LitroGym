@@ -2,21 +2,23 @@ import "./footer.css";
 import React from "react";
 interface FooterProps {
   onIniciarSesion: () => void;
-  onHomeClick: () => void;
+  onHome: () => void;
   onEjercicios: () => void;
   onQuienesSomos: () => void;
   onRegistro: () => void;
   onAlimentacion: () => void;
   onRutina: () => void;
+  onBuscadorEjercicios: () => void;
 }
 const Footer: React.FC<FooterProps> = ({
   onIniciarSesion,
-  onHomeClick,
+  onHome,
   onEjercicios,
   onQuienesSomos,
   onRegistro,
   onAlimentacion,
   onRutina,
+  onBuscadorEjercicios,
 }) => {
   return (
     <div className="footer">
@@ -62,7 +64,7 @@ const Footer: React.FC<FooterProps> = ({
           </b>
         </div>
         <div className="footer-content-right">
-          <button className="footer-boton" onClick={onHomeClick}>
+          <button className="footer-boton" onClick={onHome}>
             <p>Home</p>
           </button>
           <button className="footer-boton" onClick={onIniciarSesion}>
@@ -82,6 +84,9 @@ const Footer: React.FC<FooterProps> = ({
           </button>
           <button className="footer-boton" onClick={onEjercicios}>
             <p>Ejercicios</p>
+          </button>
+          <button className="footer-boton" onClick={onBuscadorEjercicios}>
+            <p>Buscar Ejercicios</p>
           </button>
         </div>
       </div>
