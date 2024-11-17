@@ -13,6 +13,68 @@ function QuienesSomos() {
     <form className="QuienesSomos">
       <h1>Quiénes Somos</h1>
 
+      <div className="equipo">
+        <h2>Nuestro Equipo</h2>
+
+        <button onClick={desopacar} type="button">
+          Descubrir Miembros
+        </button>
+
+        <div className={`miembros ${opacidad ? "" : "desopaco"}`}>
+          <div className="miembro">
+            <div className="flip-card">
+              <div className="front">
+                <img
+                  src={marcos}
+                  alt="Marcos Lopez"
+                  className="imagen-miembro"
+                />
+              </div>
+              <div className="back">
+                <p>Marcos Lopez - Desarrollador</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="miembro">
+            <div className="flip-card">
+              <div className="front">
+                <img src={edu} alt="Eduardo Moro" className="imagen-miembro" />
+              </div>
+              <div className="back">
+                <p>Eduardo Moro - Desarrollador</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="miembro">
+            <div className="flip-card">
+              <div className="front">
+                <img src={ahdmad} alt="Ahdmad" className="imagen-miembro" />
+              </div>
+              <div className="back">
+                <p>Ahdmad - Desarrollador</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="miembro">
+            <div className="flip-card">
+              <div className="front">
+                <img
+                  src={ruben}
+                  alt="Ruben Martin"
+                  className="imagen-miembro"
+                />
+              </div>
+              <div className="back">
+                <p>Rubén Martín - Desarrollador</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="mision">
         <h2>Nuestra Misión</h2>
         <p>
@@ -23,33 +85,6 @@ function QuienesSomos() {
           cada elemento para así conseguir los mejores resultados en el
           gimnasio.{" "}
         </p>
-      </div>
-
-      <div className="equipo">
-        <h2>Nuestro Equipo</h2>
-
-        <button onClick={desopacar} type="button">
-          Descubrir Miembros
-        </button>
-
-        <div className={`miembros ${opacidad ? "" : "desopaco"}`}>
-          <div className="miembro">
-            <img src={marcos} alt="Marcos Lopez" className="imagen-miembro" />
-            <h3>Marcos Lopez</h3>
-          </div>
-          <div className="miembro">
-            <img src={edu} alt="Eduardo" className="imagen-miembro" />
-            <h3>Eduardo</h3>
-          </div>
-          <div className="miembro">
-            <img src={ahdmad} alt="Ahdmad" className="imagen-miembro" />
-            <h3>Ahdmad</h3>
-          </div>
-          <div className="miembro">
-            <img src={ruben} alt="Ruben" className="imagen-miembro" />
-            <h3>Ruben</h3>
-          </div>
-        </div>
       </div>
 
       <div className="valores">

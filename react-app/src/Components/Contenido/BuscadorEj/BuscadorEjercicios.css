@@ -19,3 +19,40 @@
   justify-content: space-evenly;
   margin-bottom: 9%;
 }
+.ejercicios-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+.ejercicio-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+.ejercicio-card:hover {
+  transform: scale(1.05);
+}
+
+.ejercicio-card video {
+  max-width: 100%;
+  border-radius: 8px;
+}
+@media (max-width: 800px) {
+  .ejercicios-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .ejercicios-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
