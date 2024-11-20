@@ -7,7 +7,6 @@ interface HeaderProps {
   onHome: () => void;
   onContacto: () => void;
   onQuienesSomos: () => void;
-  onBuscadorEjercicios: () => void;
 }
 
 const Encabezado: React.FC<HeaderProps> = ({
@@ -15,7 +14,6 @@ const Encabezado: React.FC<HeaderProps> = ({
   onHome,
   onContacto,
   onQuienesSomos,
-  onBuscadorEjercicios,
 }) => {
   return (
     <div className="header">
@@ -37,9 +35,6 @@ const Encabezado: React.FC<HeaderProps> = ({
         </button>
         <button className="header-boton" onClick={onContacto}>
           CONTACTO
-        </button>
-        <button className="header-boton" onClick={onBuscadorEjercicios}>
-          BUSCAR EJERCICIO
         </button>
       </div>
     </div>

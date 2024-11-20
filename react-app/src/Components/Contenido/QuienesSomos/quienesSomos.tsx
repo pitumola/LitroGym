@@ -2,7 +2,7 @@ import "./QuienesSomos.css";
 import ruben from "../../Imgs/ruben.jpg";
 import marcos from "../../Imgs/marcos.jpg";
 import edu from "../../Imgs/edu.jpg";
-import ahdmad from "../../Imgs/ahdmad.jpg";
+import ahdmad from "../../Imgs/ahmad.jpg";
 import { useState } from "react";
 
 function QuienesSomos() {
@@ -53,7 +53,7 @@ function QuienesSomos() {
                 <img src={ahdmad} alt="Ahdmad" className="imagen-miembro" />
               </div>
               <div className="back">
-                <p>Ahdmad - Desarrollador</p>
+                <p>Ahmad - Desarrollador</p>
               </div>
             </div>
           </div>

@@ -8,9 +8,6 @@ import {
   Registro,
   Alimentacion,
   Rutina,
-  Ejercicios,
-  TrenSuperior,
-  TrenInferior,
   PavoPollo,
   Carnes,
   Pescados,
@@ -47,18 +44,6 @@ export function App() {
   };
   const manejarClickRutina = () => {
     setPantalla(6);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-  const manejarClickEjercicios = () => {
-    setPantalla(7);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-  const manejarClickTrenSuperior = () => {
-    setPantalla(8);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-  const manejarClickTrenInferior = () => {
-    setPantalla(9);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
   const manejarClickPavoPollo = () => {
@@ -100,7 +85,7 @@ export function App() {
           <Home
             onAlimentacion={manejarClickAlimentacion}
             onRutina={manejarClickRutina}
-            onEjercicios={manejarClickEjercicios}
+            onBuscadorEjercicios={manejarClickBuscadorEjercicios}
           />
         );
       case 2:
@@ -134,21 +119,12 @@ export function App() {
           return null;
         }
         return <Rutina />;
-      case 7:
+      case 16:
         if (!sesion.sesionIniciada) {
           setPantalla(2);
           return null;
         }
-        return (
-          <Ejercicios
-            onSuperior={manejarClickTrenSuperior}
-            onInferior={manejarClickTrenInferior}
-          />
-        );
-      case 8:
-        return <TrenSuperior />;
-      case 9:
-        return <TrenInferior />;
+        return <BuscadorEjercicios />;
       case 10:
         return <PavoPollo onAlimentacion={manejarClickAlimentacion} />;
       case 11:
@@ -161,8 +137,6 @@ export function App() {
         return <Postres onAlimentacion={manejarClickAlimentacion} />;
       case 15:
         return <AirFryer onAlimentacion={manejarClickAlimentacion} />;
-      case 16:
-        return <BuscadorEjercicios />;
     }
   };
 
@@ -173,7 +147,6 @@ export function App() {
         onHome={manejarClickHome}
         onQuienesSomos={manejarClickQuienesSomos}
         onContacto={manejarClickContacto}
-        onBuscadorEjercicios={manejarClickBuscadorEjercicios}
       />
       {mostrarContenido()}
 
@@ -184,7 +157,6 @@ export function App() {
         onQuienesSomos={manejarClickQuienesSomos}
         onAlimentacion={manejarClickAlimentacion}
         onRutina={manejarClickRutina}
-        onEjercicios={manejarClickEjercicios}
         onBuscadorEjercicios={manejarClickBuscadorEjercicios}
       />
     </div>

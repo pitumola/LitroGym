@@ -99,7 +99,6 @@ const ejercicios: Ejercicio[] = [
     descripcion: "Ejercicio para trabajar los cuádriceps.",
     videoUrl: sentadilla,
   },
-  // Agregar más ejercicios
 ];
 
 const BuscadorEjercicios = () => {
