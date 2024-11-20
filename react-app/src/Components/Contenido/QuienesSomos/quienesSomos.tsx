@@ -10,7 +10,7 @@ function QuienesSomos() {
   const desopacar = () => setOpacidad(!opacidad);
 
   return (
-    <form className="QuienesSomos">
+    <div className="QuienesSomos">
       <h1>Quiénes Somos</h1>
 
       <div className="equipo">
@@ -105,7 +105,7 @@ function QuienesSomos() {
           </li>
         </ul>
       </div>
-    </form>
+    </div>
   );
 }
 
