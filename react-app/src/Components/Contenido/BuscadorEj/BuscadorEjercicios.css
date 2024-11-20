@@ -23,6 +23,12 @@
 .BuscadorEjercicio h2 {
   margin: 2rem;
 }
+
+.BuscadorEjercicio input {
+  height: 1.5rem;
+  font-size: 1rem;
+}
+
 .ejercicios-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -46,10 +52,22 @@
   transform: scale(1.05);
 }
 
+.ejercicio-card h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.ejercicio-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
 .ejercicio-card video {
   max-width: 100%;
   border-radius: 8px;
 }
+
 @media (max-width: 800px) {
   .ejercicios-grid {
     grid-template-columns: repeat(3, 1fr);

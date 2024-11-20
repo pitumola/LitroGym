@@ -38,7 +38,7 @@ const ejercicios: Ejercicio[] = [
   },
   {
     id: 4,
-    nombre: "cinta",
+    nombre: "Cinta",
     tipo: "cardio",
     descripcion: "Ejercicio para disminuir porcentaje de grasa.",
     videoUrl: cinta,
