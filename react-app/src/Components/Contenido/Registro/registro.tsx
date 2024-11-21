@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./Registro.css";
 import "../Login/login";
 
-
 interface Usuario {
   id: string;
   nombre: string;
@@ -15,7 +14,6 @@ const Registro: React.FC = () => {
   const [contrasena, setContrasena] = useState("");
   const [usuarios, setUsuarios] = useState<Usuario[]>([]);
 
-  // Cargar usuarios desde localStorage al iniciar el componente
   useEffect(() => {
     const usuariosGuardados = localStorage.getItem("usuarios");
     if (usuariosGuardados) {
@@ -26,42 +24,35 @@ const Registro: React.FC = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    // Verificar si el correo electrónico es válido
     const Patronemail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!Patronemail.test(correo)) {
       alert("Por favor, introduce un correo electrónico válido.");
       return;
     }
 
-    // Verificar si el usuario ya está registrado
     const usuarioExistente = usuarios.find((usuario) => usuario.id === correo);
     if (usuarioExistente) {
       alert("Este correo electrónico ya está registrado.");
       return;
     }
 
-    // Crear un nuevo usuario
     const NuevoUsuario: Usuario = {
       id: correo,
       nombre: nombre,
       contrasena: contrasena,
     };
 
-    // Actualizar el estado con el nuevo usuario
     const nuevosUsuarios = [...usuarios, NuevoUsuario];
     setUsuarios(nuevosUsuarios);
 
-    // Guardar los usuarios en localStorage
     localStorage.setItem("usuarios", JSON.stringify(nuevosUsuarios));
 
     alert("Te has registrado con éxito.");
 
-    // Limpiar los campos
     setCorreo("");
     setNombre("");
     setContrasena("");
 
-    // Redirigir a la página de inicio después de un tiempo
     setTimeout(() => {
       window.location.href = "/home";
     }, 300);
