@@ -6,9 +6,6 @@ export { default as QuienesSomos } from "./Contenido/QuienesSomos/quienesSomos";
 export { default as Registro } from "./Contenido/Registro/registro";
 export { default as Alimentacion } from "./Contenido/Servicios/Alimentacion/Alimentacion";
 export { default as Rutina } from "./Contenido/Servicios/Rutina/Rutina";
-export { default as Ejercicios } from "./Contenido/Servicios/Ejercicios/Ejercicios";
-export { default as TrenSuperior } from "./Contenido/Servicios/Ejercicios/TrenSuperior";
-export { default as TrenInferior } from "./Contenido/Servicios/Ejercicios/TrenInferior";
 export { default as PavoPollo } from "./Contenido/Servicios/Alimentacion/Recetas/PavoPollo/PavoPollo";
 export { default as Carnes } from "./Contenido/Servicios/Alimentacion/Recetas/Carnes/Carnes";
 export { default as Pescados } from "./Contenido/Servicios/Alimentacion/Recetas/Pescados/Pescados";
@@ -16,3 +13,5 @@ export { default as Vegana } from "./Contenido/Servicios/Alimentacion/Recetas/Ve
 export { default as Postres } from "./Contenido/Servicios/Alimentacion/Recetas/Postres/Postres";
 export { default as AirFryer } from "./Contenido/Servicios/Alimentacion/Recetas/AirFryer/AirFryer";
 export { default as sesion } from "./Contenido/Login/sesion";
+export { default as BuscadorEjercicios } from "./Contenido/BuscadorEj/BuscadorEjercicios";
+

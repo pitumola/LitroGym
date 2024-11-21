@@ -8,6 +8,7 @@ interface FooterProps {
   onRegistro: () => void;
   onAlimentacion: () => void;
   onRutina: () => void;
+  onBuscadorEjercicios: () => void;
 }
 const Footer: React.FC<FooterProps> = ({
   onIniciarSesion,
@@ -17,6 +18,7 @@ const Footer: React.FC<FooterProps> = ({
   onRegistro,
   onAlimentacion,
   onRutina,
+  onBuscadorEjercicios,
 }) => {
   return (
     <div className="footer">
@@ -80,8 +82,8 @@ const Footer: React.FC<FooterProps> = ({
           <button className="footer-boton" onClick={onRutina}>
             <p>Rutina</p>
           </button>
-          <button className="footer-boton" onClick={onEjercicios}>
-            <p>Ejercicios</p>
+          <button className="footer-boton" onClick={onBuscadorEjercicios}>
+            <p>Buscar Ejercicios</p>
           </button>
         </div>
       </div>

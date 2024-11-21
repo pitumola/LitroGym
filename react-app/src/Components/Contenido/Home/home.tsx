@@ -5,13 +5,13 @@ import React from "react";
 interface HomeProps {
   onAlimentacion: () => void;
   onRutina: () => void;
-  onEjercicios: () => void;
+  onBuscadorEjercicios: () => void;
 }
 
 const Home: React.FC<HomeProps> = ({
   onAlimentacion,
   onRutina,
-  onEjercicios,
+  onBuscadorEjercicios,
 }) => {
   return (
     <div>
@@ -52,7 +52,7 @@ const Home: React.FC<HomeProps> = ({
         <button
           className="home-services"
           id="ejercicios"
-          onClick={onEjercicios}
+          onClick={onBuscadorEjercicios}
         ></button>
       </div>
     </div>

@@ -8,9 +8,6 @@ import {
   Registro,
   Alimentacion,
   Rutina,
-  Ejercicios,
-  TrenSuperior,
-  TrenInferior,
   PavoPollo,
   Carnes,
   Pescados,
@@ -18,6 +15,8 @@ import {
   Postres,
   AirFryer,
   sesion,
+  BuscadorEjercicios,
+
 } from "./Components";
 
 export function App() {
@@ -48,18 +47,6 @@ export function App() {
     setPantalla(6);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
-  const manejarClickEjercicios = () => {
-    setPantalla(7);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-  const manejarClickTrenSuperior = () => {
-    setPantalla(8);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-  const manejarClickTrenInferior = () => {
-    setPantalla(9);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
   const manejarClickPavoPollo = () => {
     setPantalla(10);
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -84,6 +71,10 @@ export function App() {
     setPantalla(15);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+  const manejarClickBuscadorEjercicios = () => {
+    setPantalla(16);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const manejarClickContacto = () => {
     window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
@@ -95,7 +86,7 @@ export function App() {
           <Home
             onAlimentacion={manejarClickAlimentacion}
             onRutina={manejarClickRutina}
-            onEjercicios={manejarClickEjercicios}
+            onBuscadorEjercicios={manejarClickBuscadorEjercicios}
           />
         );
       case 2:
@@ -134,16 +125,7 @@ export function App() {
           setPantalla(2);
           return null;
         }
-        return (
-          <Ejercicios
-            onSuperior={manejarClickTrenSuperior}
-            onInferior={manejarClickTrenInferior}
-          />
-        );
-      case 8:
-        return <TrenSuperior />;
-      case 9:
-        return <TrenInferior />;
+        return <BuscadorEjercicios />;
       case 10:
         return <PavoPollo onAlimentacion={manejarClickAlimentacion} />;
       case 11:
@@ -176,7 +158,7 @@ export function App() {
         onQuienesSomos={manejarClickQuienesSomos}
         onAlimentacion={manejarClickAlimentacion}
         onRutina={manejarClickRutina}
-        onEjercicios={manejarClickEjercicios}
+        onBuscadorEjercicios={manejarClickBuscadorEjercicios}
       />
     </div>
   );
