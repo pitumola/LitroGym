@@ -8,7 +8,7 @@ interface Usuario {
   contrasena: string;
 }
 
-export default function Registro() {
+const Registro: React.FC = () => {
   const [correo, setCorreo] = useState("");
   const [nombre, setNombre] = useState("");
   const [contrasena, setContrasena] = useState("");
@@ -115,9 +115,6 @@ export default function Registro() {
       </div>
     </div>
   );
-}
-// const Registro: React.FC = () => {
+};
 
-// };
-
-// export default Registro;
+export default Registro;
