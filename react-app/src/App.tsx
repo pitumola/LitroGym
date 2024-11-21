@@ -16,6 +16,7 @@ import {
   AirFryer,
   sesion,
   BuscadorEjercicios,
+
 } from "./Components";
 
 export function App() {
@@ -119,7 +120,7 @@ export function App() {
           return null;
         }
         return <Rutina />;
-      case 16:
+      case 7:
         if (!sesion.sesionIniciada) {
           setPantalla(2);
           return null;
