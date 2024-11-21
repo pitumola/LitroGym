@@ -14,3 +14,4 @@ export { default as Postres } from "./Contenido/Servicios/Alimentacion/Recetas/P
 export { default as AirFryer } from "./Contenido/Servicios/Alimentacion/Recetas/AirFryer/AirFryer";
 export { default as sesion } from "./Contenido/Login/sesion";
 export { default as BuscadorEjercicios } from "./Contenido/BuscadorEj/BuscadorEjercicios";
+
