@@ -16,7 +16,6 @@ import {
   AirFryer,
   sesion,
   BuscadorEjercicios,
-
 } from "./Components";
 
 export function App() {
@@ -47,6 +46,10 @@ export function App() {
     setPantalla(6);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+  const manejarClickBuscadorEjercicios = () => {
+    setPantalla(7);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   const manejarClickPavoPollo = () => {
     setPantalla(10);
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -69,10 +72,6 @@ export function App() {
   };
   const manejarClickAirFryer = () => {
     setPantalla(15);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-  const manejarClickBuscadorEjercicios = () => {
-    setPantalla(16);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 

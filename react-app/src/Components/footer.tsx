@@ -3,7 +3,6 @@ import React from "react";
 interface FooterProps {
   onIniciarSesion: () => void;
   onHome: () => void;
-  onEjercicios: () => void;
   onQuienesSomos: () => void;
   onRegistro: () => void;
   onAlimentacion: () => void;
@@ -13,7 +12,6 @@ interface FooterProps {
 const Footer: React.FC<FooterProps> = ({
   onIniciarSesion,
   onHome,
-  onEjercicios,
   onQuienesSomos,
   onRegistro,
   onAlimentacion,

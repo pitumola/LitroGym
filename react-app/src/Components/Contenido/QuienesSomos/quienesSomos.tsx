@@ -11,13 +11,13 @@ function QuienesSomos() {
 
   return (
     <div className="QuienesSomos">
-      <h1>Quiénes Somos</h1>
+      <h1>QUIÉNES SOMOS</h1>
 
       <div className="equipo">
         <h2>Nuestro Equipo</h2>
 
         <button onClick={desopacar} type="button">
-          Descubrir Miembros
+          <b> Descubrir Miembros</b>
         </button>
 
         <div className={`miembros ${opacidad ? "" : "desopaco"}`}>

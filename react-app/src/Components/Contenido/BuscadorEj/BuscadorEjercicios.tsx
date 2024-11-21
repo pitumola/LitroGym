@@ -111,13 +111,15 @@ const BuscadorEjercicios = () => {
   return (
     <div className="BuscadorEjercicio">
       <div>
-        <h2>Buscador de Ejercicios</h2>
-        <input
-          type="text"
-          placeholder="Buscar ejercicio..."
-          value={buscador}
-          onChange={(e) => setBuscador(e.target.value)}
-        />
+        <div className="encabezado">
+          <b className="BuscadorEjercicio-titulo">EJERCICIOS</b>
+          <input
+            type="text"
+            placeholder="Buscar ejercicio..."
+            value={buscador}
+            onChange={(e) => setBuscador(e.target.value)}
+          />
+        </div>
         <div className="ejercicios-grid">
           {filtroEjercicios.length > 0 ? (
             filtroEjercicios.map((ejercicio) => (
